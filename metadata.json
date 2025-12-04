@@ -1,0 +1,5 @@
+{
+  "name": "NeuroForge",
+  "description": "A 100% client-side, offline-capable prompt engineering IDE. Features local Transformer inference for prompt analysis and generation without server dependencies.",
+  "requestFramePermissions": []
+}
