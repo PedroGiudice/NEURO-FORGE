@@ -1,4 +1,3 @@
-
 export interface PromptTemplate {
   id: string;
   name: string;
@@ -7,36 +6,19 @@ export interface PromptTemplate {
 }
 
 export interface AnalysisResult {
-  sentiment: {
-    label: string;
-    score: number;
-  };
-  conflict?: {
-    label: string;
-    score: number; // 0 to 1, probability of conflict
-  };
+  label: 'POSITIVE' | 'NEGATIVE' | 'NEUTRAL';
+  score: number;
   timestamp: number;
 }
 
 export interface ModelStatus {
-  task: 'generator' | 'classifier' | 'conflict';
+  task: 'generator' | 'classifier';
   status: 'idle' | 'loading' | 'ready' | 'error' | 'working';
   progress?: number;
   message?: string;
 }
 
-export interface AppSettings {
-  generation: {
-    temperature: number;
-    maxTokens: number;
-  };
-  analysis: {
-    modelId: string;
-    threshold: number;
-  };
-}
-
-export type TabView = 'telemetry' | 'config' | 'source';
+export type TabView = 'editor' | 'settings';
 
 export interface LogEntry {
   id: string;
